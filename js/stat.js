@@ -1,29 +1,5 @@
 'use strict';
 
-var getMax = function (array) {
-  var initialIndex = 0;
-  var max = array[initialIndex];
-  for (var i = initialIndex + 1; i < array.length; i++) {
-    var time = array[i];
-    if (time > max) {
-      max = time;
-    }
-  }
-  return max;
-};
-
-/* var getMin = function (array) {
-  var initialIndex = 0;
-  var min = array[initialIndex];
-  for (var i = initialIndex + 1; i < array.length; i++) {
-    var time = array[i];
-    if (time < min) {
-      min = time;
-    }
-  }
-  return min;
-}; */
-
 window.renderStatistics = function (ctx, names, times) {
   var initialX = 100;
   var initialY = 10;
@@ -60,8 +36,19 @@ window.renderStatistics = function (ctx, names, times) {
   var indent = 50;
   var initialHistogramX = 140;
   var initialHistogramY = 240;
+
+  var getMax = function (array) {
+    var max = array[0];
+    for (var i = 1; i < array.length; i++) {
+      var time = array[i];
+      if (time > max) {
+        max = time;
+      }
+    }
+    return max;
+  };
+
   var maxTime = getMax(times);
-  // var minTime = getMinTime();
   var step = histogramHeight / maxTime;
 
   for (var i = 0; i < times.length; i++) {
