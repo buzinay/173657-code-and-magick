@@ -22,9 +22,9 @@ var getRandomElement = function (array) {
 // Функция создания одного объекта Волшебника
 var createWizard = function () {
   var wizard = {};
-  wizard.name = WIZARD_NAMES.splice(getRandomElement(WIZARD_NAMES), 1)[0] + ' ' + WIZARD_SURNAME.splice(getRandomElement(WIZARD_SURNAME), 1)[0];
-  wizard.coatColor = WIZARD_COAT_COLOR.splice(getRandomElement(WIZARD_COAT_COLOR), 1)[0];
-  wizard.eyesColor = WIZARD_EYES_COLOR.splice(getRandomElement(WIZARD_EYES_COLOR), 1)[0];
+  wizard.name = WIZARD_NAMES[getRandomElement(WIZARD_NAMES)] + ' ' + WIZARD_SURNAME[getRandomElement(WIZARD_SURNAME)];
+  wizard.coatColor = WIZARD_COAT_COLOR[getRandomElement(WIZARD_COAT_COLOR)];
+  wizard.eyesColor = WIZARD_EYES_COLOR[getRandomElement(WIZARD_EYES_COLOR)];
   return wizard;
 };
 
